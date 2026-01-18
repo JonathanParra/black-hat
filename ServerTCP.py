@@ -7,6 +7,8 @@ PORT = 9998
 def main():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((IP,PORT))
+    server.listen(5)
+    print(f'[*] Listen  in {IP}:{PORT}')
     while True:
         client, address = server.accept()
         print(f'[*] Accepted connection from {address[0]}: {address[1]}')
